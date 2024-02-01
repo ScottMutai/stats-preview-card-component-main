@@ -1,57 +1,86 @@
-
-
-body{
+* {
     margin: 0;
     padding: 0;
-    align-items: center;
-    background-color:hsl(233, 47%, 7%) ;
-    
-}
-
-.child{
-    width: 100px;
+    box-sizing: border-box;
+  }
+  body {
+    padding: 120px 100px;
+    background-color: hsl(233, 47%, 7%);
+    color: hsl(0, 0%, 100%);
+    font-family: sans-serif;
+  }
+  #mobile-img {
+    display: none;
+  }
+  
+  #child {
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding-top: 20px;
-    margin: 60px auto;
+    background-color: hsl(244, 38%, 16%);
     border-radius: 10px;
-    overflow: hidden;
-    text-align: center;
-}
-.content{
-    background-color: hsl(244, 38, 16);
-    width: 100%;
-    height: auto;
-    border-top-right-radius: 8px;
-}
-h1{
-    text-align: center;
-    font-size: 18px;
-    color: white;
-}
-.key{
-    text-align: center;
-    margin-top: 25px;
-    font-size: 20px;
-    font-weight: 800;
-    color:white;
-}
-.key h2{
-    font-size: 8px;
-    color: hsla(0, 0%, 100%, 0.6)
-}
-
-@media screen and (min width:100px) {
-.child{
+  }
+  .message {
+    width: 50%;
+    padding: 60px;
+  }
+  h1 {
+    margin-bottom: 30px;
+    font-size: 40px;
+  }
+  h1 span {
+    color: hsl(277, 64%, 61%);
+  }
+  p {
+    margin-bottom: 65px;
+    color: hsla(0, 0%, 100%, 0.75);
+  }
+  .stats {
     display: flex;
-    width:510px;
-    height: 200px;
-    border-radius: 8px;
-    overflow: hidden;
-}   
-h1{
-    text-align: justify;
-    margin: 10px 30px;
-} 
-}
+    font-size: 20px;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  .stats span:first-child {
+    font-weight: bold;
+    display: block;
+    font-size: 26px;
+    color: white;
+  }
+  .image {
+    width: 50%;
+    background-image: url("./images/image-header-desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .image img {
+    height: 100%;
+  }
+  
+  .overlay {
+    height: 100%;
+    background-color: hsla(277, 64%, 61%, 0.4);
+  }
+  @media (max-width: 700px) {
+    body {
+      padding: 100px 20px;
+    }
+    #child {
+      flex-direction: column-reverse;
+    }
+  
+    .image {
+      width: unset;
+      height: 300px;
+      background-image: url("./images/image-header-mobile.jpg");
+    }
+    .image img {
+      width: 100%;
+    }
+    .message {
+      width: 100%;
+      padding: 30px;
+      text-align: center;
+    }
+    .stats {
+      flex-direction: column;
+    }
+  }
